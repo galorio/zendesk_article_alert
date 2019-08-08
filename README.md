@@ -1,7 +1,7 @@
 # zendesk_article_alert
 At the time of writing, Zendesk doesn't have a feature to notify individuals if there are newly created &amp; updated articles. They have to follow the sections/categories for them to be notified.
 
-ITRS support page has several sections/categories so it is not efficient to subscribe to each one. Also, from time-to-time, new sections/categories are added. 
+Support Portals have several sections/categories so it is not efficient to subscribe to each one. Also, from time-to-time, new sections/categories are added. 
 
 Refer to Help Center: https://support.zendesk.com/hc/en-us/articles/225693668-Help-Center-Are-agents-and-admins-notified-of-new-articles-posts-and-comments-by-default-
 
