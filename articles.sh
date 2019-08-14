@@ -9,10 +9,11 @@
  
 # A simple script written by Arnel Galorio
  
+
+DOMAIN="$1" 
+RECIPIENTS="$2"
  
-RECIPIENTS="$1"
- 
-curl "https://itrs.zendesk.com/api/v2/help_center/articles/search.json?created_at=`date +%Y-%m-%d -d 'today'`&query=%22%22&sort_by=created_at&sort_order=asc&page=1&per_page=100" -s | jq --raw-output '.results[] | "\(.created_at | fromdateiso8601 | strftime("%Y-%m-%d %H:%M:%S GMT -")) \(.html_url)"' > /tmp/created_articles.txt
+curl "https://$DOMAIN/api/v2/help_center/articles/search.json?created_at=`date +%Y-%m-%d -d 'today'`&query=%22%22&sort_by=created_at&sort_order=asc&page=1&per_page=100" -s | jq --raw-output '.results[] | "\(.created_at | fromdateiso8601 | strftime("%Y-%m-%d %H:%M:%S GMT -")) \(.html_url)"' > /tmp/created_articles.txt
  
 curl "https://itrs.zendesk.com/api/v2/help_center/articles/search.json?updated_at=`date +%Y-%m-%d -d 'today'`&query=%22%22&sort_by=updated_at&sort_order=asc&page=1&per_page=100" -s | jq --raw-output '.results[] | "\(.updated_at | fromdateiso8601 | strftime("%Y-%m-%d %H:%M:%S GMT -")) \(.html_url)"' > /tmp/updated_articles.txt
  
